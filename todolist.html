@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+ 
+<input id="entry"><button id="add">Add a Task</button>
+<div id="items"></div>
+<script src="todo.js">
+    var addButton = document.getElementById('add');
+    var entryField = document.getElementById('entry');
+    var itemsDiv = document.getElementById('items');
+
+    addButton.addEventListener('click', function() {
+        var taskText = entryField.value;
+        if (taskText) {
+            var taskItem = document.createElement('div');
+            taskItem.textContent = taskText;
+            itemsDiv.appendChild(taskItem);
+            entryField.value = '';
+        }
+    });
+    </script>
+</body>
+</html>
